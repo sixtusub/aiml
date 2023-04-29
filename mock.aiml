@@ -1,0 +1,154 @@
+<aiml> 
+  <category>
+    <pattern>WHAT IS LONG TERM KNOWLEDGE</pattern>
+    <template>Long-term knowledge is valid every time a programme is run.</template>
+  </category>
+  <category>
+    <pattern>WHAT IS SHORT TERM KNOWLEDGE</pattern>
+    <template>Short-term knowledge is only valid for a particular instance or run of a programme.</template>
+  </category>
+  <category>
+    <pattern>WHAT IS GENERIC KNOWLEDGE</pattern>
+    <template>Generic knowledge is relevant to more than one application or domain.</template>
+  </category>
+  <category>
+    <pattern>WHAT IS DOMAIN SPECIFIC KNOWLEDGE</pattern>
+    <template>Domain-specific knowledge is only applicable to one specific application or domain.</template>
+  </category>
+  <category>
+    <pattern>WHAT IS A FACT</pattern>
+    <template>A fact is a statement which asserts that a relationship holds for an object-subject pair.</template>
+  </category>
+  <category>
+    <pattern>WHAT IS A RULE</pattern>
+    <template>A rule is a statement that generates new knowledge by asserting that if one fact is true, then another is also true.</template>
+  </category>
+
+  <category>
+    <pattern>WHAT IS LONG TERM KNOWLEDGE</pattern>
+    <template>Long-term knowledge is valid every time a programme is run.</template>
+  </category>
+
+  <category>
+    <pattern>WHAT IS *</pattern>
+    <template>
+      <srai><set name="knowledge"><star /></set></srai>
+    </template>
+  </category>
+  <template>
+    <condition name="knowledge" value="LONG TERM KNOWLEDGE">
+      Long-term knowledge is valid every time a programme is run.
+    </condition>
+    <condition name="knowledge" value="SHORT TERM KNOWLEDGE">
+      Short-term knowledge is only valid for a particular instance or run of a programme.
+    </condition>
+    <condition name="knowledge" value="GENERIC KNOWLEDGE">
+      Generic knowledge is relevant to more than one application or domain.
+    </condition>
+    <condition name="knowledge" value="DOMAIN SPECIFIC KNOWLEDGE">  
+      Domain-specific knowledge is only applicable to one specific application or domain.
+    </condition>
+  </template>
+
+
+  <category>
+    <pattern>DESCRIBE HOW AIML ALLOWS VARIABLES IN ITS LONG TERM KNOWLEDGE</pattern>
+    <template>AIML has wildcards and srai for that purpose.</template>
+  </category>
+  <category>
+    <pattern>HOW DOES AIML PROVIDE CONTEXT DURING A CONVERSATION</pattern>
+    <template>AIML supports context through the use of the that tag to refer to previous bot answers, and via setting variables such as topic.</template>
+  </category>
+  <category>
+    <pattern>ILLUSTRATE THE CONCEPT OF LONG TERM DOMAIN SPECIFIC KNOWLEDGE</pattern>
+    <template>The weight of the different types of birds in the game Angry Birds.</template>
+  </category>
+  <category>
+    <pattern>ILLUSTRATE THE CONCEPT OF LONG TERM GENERIC KNOWLEDGE</pattern>
+    <template>The equations of motion used to calculate the flight-path of a bird in the game Angry Birds.</template>
+  </category>
+
+  <category>
+    <pattern>ILLUSTRATE THE CONCEPT OF A RULE</pattern>
+    <template>If isUWEStaff(X) then hasUWEPhone (X).</template>
+  </category>
+  <category>
+    <pattern>ILLUSTRATE THE CONCEPT OF A FACT</pattern>
+    <template>
+      <think> 
+        <set name="username">Jim Smith</set>
+        <set name="userphone">0117 3287417</set>
+      </think>
+      <condition name="username" value="Jim Smith"><get name="username" /></condition> from UWE hasUWEPhoneNumber <condition name="userphone" value="0117 3287417"><get name="userphone" />.</condition>
+    </template>
+  </category>
+  <category>
+    <pattern>* AN EXAMPLE *</pattern>
+    <template>
+      <srai>ILLUSTRATE THE CONCEPT <star index="2"/></srai>
+    </template>
+  </category>
+  <category>
+    <pattern>WHY IS KNOWING THAT USEFUL</pattern>
+    <template>
+      <random>
+        <li>I have no answer for that.</li>
+        <li>Because it allows us to make statements that apply to classes of things or questions.</li>
+        <li>The fourth word in this question is an example of how some words can only be understood in context.</li>
+      </random>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>DESCRIBE *</pattern>
+    <template>
+      <srai>WHAT IS <star/></srai>
+    </template>
+  </category>
+  <category>
+    <pattern>TELL ME ABOUT *</pattern>
+    <template>
+      <srai>WHAT IS <star/></srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>GIVE ME AN EXAMPLE OF SHORT TERM DOMAIN SPECIFIC KNOWLEDGE</pattern>
+    <template>The number of birds that a user has fired in a particular episode of Angry Birds.</template>
+  </category>
+  <category>
+    <pattern>GIVE ME AN EXAMPLE OF SHORT TERM GENERIC KNOWLEDGE</pattern>
+    <template>The date on which a specific episode of Angry Birds is played is generic because it could also be used by another programme.</template>
+  </category>
+  <category>
+    <pattern>ILLUSTRATE THE CONCEPT *</pattern>
+    <template>
+      <srai>GIVE ME AN EXAMPLE <star/></srai>
+    </template>
+  </category>
+  <category>
+    <pattern>PROVIDE AN EXAMPLE *</pattern>
+    <template>
+      <srai>GIVE ME AN EXAMPLE <star/></srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>* MYBOT</pattern>
+    <template>
+      <srai><star/></srai>
+    </template>
+  </category>
+  <category>
+    <pattern>PLEASE MYBOT *</pattern>
+    <template>
+      <srai><star/></srai>
+    </template>
+  </category>
+  <category>
+    <pattern>MYBOT PLEASE *</pattern>
+    <template>
+      <srai><star/></srai>
+    </template>
+  </category>
+</aiml>
